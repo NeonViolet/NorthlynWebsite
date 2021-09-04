@@ -12,9 +12,9 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password',validators=[DataRequired()])
     submit = SubmitField('Log in')
 
-class RegistrationForm(Flaskform):
-    email = StringField('Email',validators=[DataRequired(),Email()])
-    username = StringField('Username',validators=[DataRequired()]
+class RegistrationForm(FlaskForm):
+    email = StringField('Email-address',validators=[DataRequired(),Email()])
+    username = StringField('Username',validators=[DataRequired()])
     password = PasswordField('Password',validators=[DataRequired(),EqualTo('pass_confirm',message='Passwords must match!')])
     pass_confirm = PasswordField('Confirm password',validators=[DataRequired()])
     submit = SubmitField('Register')
@@ -27,9 +27,9 @@ class RegistrationForm(Flaskform):
         if User.query.filter_by(username=field.data).first():
             raise ValidationError('Your username has been registered already.')
 
-class UpdateUserForm(Flaskform):
+class UpdateUserForm(FlaskForm):
     email = StringField('Email',validators=[DataRequired(),Email()])
-    username = StringField('Username',validators=[DataRequired()]
+    username = StringField('Username',validators=[DataRequired()])
     picture = FileField('Update profile picture',validators=[FileAllowed(['jpg','png'])])
     submit = SubmitField('Update')
 
