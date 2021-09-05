@@ -63,8 +63,8 @@ def account():
         flash('User account updated!')
         return redirect(url_for('users.account'))
     elif request.method == 'GET':
-        form.username.data = current.user.username
-        form.email.data = current.user.email
+        form.username.data = current_user.username
+        form.email.data = current_user.email
 
     profile_image = url_for('static',filename='profile_pics/' + current_user.profile_image)
     return render_template('account.html',profile_image=profile_image,form=form)

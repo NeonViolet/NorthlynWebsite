@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="px-4 py-1 my-5 text-center">
+<div class="text-center" style="background-color: #9A616D;">
   <div class="col-lg-6 mx-auto">
 
     <section class="vh-120" style="background-color: #9A616D;">
@@ -19,7 +19,7 @@
                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
                   <div class="card-body p-4 p-lg-5 text-black">
 
-                    <form>
+                    <form method="POST">
 
                       <div class="d-flex align-items-center mb-3 pb-1">
                         <img
@@ -44,7 +44,7 @@
                       </div>
 
                       <a class="small text-muted" href="#!">Forgot password?</a>
-                      <p class="mb-1 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!" style="color: #393f81;">Register here</a></p>
+                      <p class="mb-1 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="{{url_for('users.register')}}" style="color: #393f81;">Register here</a></p>
                       <a href="#!" class="small text-muted">Terms of use.</a>
                       <a href="#!" class="small text-muted">Privacy policy</a>
                     </form>
