@@ -12,7 +12,7 @@ from flask_login import LoginManager
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'mysecretkey'
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 
 ### Database setup #####
 #basedir = os.path.abspath(os.path.dirname(__file__))
