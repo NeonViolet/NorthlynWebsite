@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bg-image bg-black d-flex justify-content-sm-center" style="background-image: url('{{url_for('static',filename="mountain.jpg")}}');  background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;">
+  <div class="text-center ">
+      <div class="card mx-auto col-lg-8 bg-dark" style="--bs-bg-opacity: .80;">
+        <div class="card-body">
+          <div class="container">
+            <img class="d-block mx-auto img-fluid" src="{{url_for('static',filename="zoltan.png")}}" alt="" width="200" height="auto">
+            <h1 class="display-5 fw-bold fst-italic text-white pb-5">Rotmus</h1>
+          </div>
+
+          <div class="text-white col-lg-10 mx-auto">
+            <p class="lead mb-4">Your attack roll is <b>1d20 + your ability modifier + your proficiency bonus</b> if you're proficient with the weapon you’re using.</p>
+            <p class="lead mb-4">And for damage: When attacking with a weapon, you add your <b>ability modifier</b>(the same modifier used for the attack roll) and <b>rage bonus of +3</b> to the damage.</p>
+            <p class="h5 mb-4">Attack Roll: 1d20 + ability modifier + proficiency bonus (+4)</p>
+            <p class="h5 mb-4">Damage Roll: Damage + ability modifier + rage bonus (+3)</p>
+          </div>
+          <div class="text-white col-lg-10 mx-auto py-5">
+            <h3 class="mb-4"><b>Rage</b></h3>
+            <div class="text-start">
+            <p class="lead mb-4">In battle, you fight with primal ferocity. On Your Turn, you can enter a rage as a Bonus Action.</p>
+            <p class="lead mb-4">While raging, you gain the following benefits if you aren't wearing heavy armor:</p>
+            <dl class="d-block mx-5">
+              <dt class="">• You have advantage on Strength checks and Strength Saving Throws.</dt>
+              <dt class="">• When you make a melee weapon Attack using Strength, you gain a +3 (at Lv 9) bonus to the damage roll. This bonus increases as you level.</dt>
+              <dt class="">• You have Resistance to bludgeoning, piercing, and slashing damage.</dt>
+            </dl>
+            <p class="lead mb-4">If you are able to cast Spells, you can't cast them or concentrate on them while raging.</p>
+            <p class="lead mb-4">Your rage lasts for 1 minute. It ends early if you are knocked Unconscious or if Your Turn ends and you haven't attacked a Hostile creature since your last turn or taken damage since then. You can also end your rage on Your Turn as a Bonus Action.</p>
+            <p class="lead mb-4">Once you have raged the maximum number of times for your Barbarian level, you must finish a Long Rest before you can rage again. You may rage 2 times at 1st Level, 3 at 3rd, 4 at 6th, 5 at 12th, and 6 at 17th.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
