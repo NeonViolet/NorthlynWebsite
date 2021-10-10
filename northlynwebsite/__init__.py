@@ -1,8 +1,8 @@
 # northlynwebsite/__init__.py
 import os, re
-#uri = os.getenv("DATABASE_URL")  # or other relevant config var
-#if uri.startswith("postgres://"):
-#    uri = uri.replace("postgres://", "postgresql://", 1)
+uri = os.getenv("DATABASE_URL")  # or other relevant config var
+if uri.startswith("postgres://"):
+   uri = uri.replace("postgres://", "postgresql://", 1)
 # rest of connection code using the connection string `uri`
 
 from flask import Flask
@@ -17,8 +17,8 @@ app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 ### Database setup #####
 #basedir = os.path.abspath(os.path.dirname(__file__))
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir,'data.sqlite')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5432/northlyn'
-#app.config['SQLALCHEMY_DATABASE_URI'] = uri
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5432/northlyn'
+app.config['SQLALCHEMY_DATABASE_URI'] = uri
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
